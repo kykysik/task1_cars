@@ -58,4 +58,10 @@ public class CarsPark {
         }
     }
 
+    public boolean correctData(int min, int max) {
+        if((min > max) || (min <0) || (max <0)) {
+            return true;
+        }
+        return false;
+    }
 }

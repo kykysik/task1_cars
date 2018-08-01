@@ -42,13 +42,13 @@
         <tr>
             <td><label for="min"><fmt:message key="input.min" /></label></td>
         </tr>
-        <td><input required type="number" min="0" max="500" id="min" name="min"/> </td>
+        <td><input type="number" step="10" min="0" max="500" id="min" name="min" /> </td>
 
 
         <tr>
             <td><label for="min"><fmt:message key="input.max" /></label></td>
         </tr>
-        <td><input required type="number" min="min" max="500" name="max" /> </td>
+        <td><input type="number" step="10" min="0" max="500" name="max" required /> </td>
 
         <tr>
             <td colspan ="2">

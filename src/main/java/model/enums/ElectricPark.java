@@ -5,7 +5,6 @@ import model.interfaces.ElectricCar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 
@@ -66,13 +65,4 @@ public enum ElectricPark implements ElectricCar {
         return parkPrice;
     }
 
-    /**
-     * Comparator.
-     * Compares consumption cars
-     */
-    public static Comparator<ElectricCar> electricComparator = new Comparator<ElectricCar>() {
-        public int compare(ElectricCar d1, ElectricCar d2) {
-            return d2.getConsumption() - d1.getConsumption();
-        }
-    };
 }

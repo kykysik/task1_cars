@@ -25,13 +25,13 @@ public class ServletContainer extends HttpServlet {
         int min = Integer.parseInt(req.getParameter("min"));
         int max = Integer.parseInt(req.getParameter("max"));
         String lang = req.getParameter("lang");
-        System.out.println(lang);
         ResourceBundle bundle = ResourceBundle.getBundle(
                 MESSAGES_BUNDLE_NAME,new Locale(lang));
-        System.out.println(lang);
+
+        CarsPark carsPark = new CarsPark(min,max);
 
         String error = null;
-        if(min > max){
+        if(carsPark.correctData(min,max)){
             error = bundle.getString(WRONG_INPUT_DATA);
         }
         if(error != null){
@@ -41,7 +41,6 @@ public class ServletContainer extends HttpServlet {
                     = req.getRequestDispatcher("/WEB-INF/views/startPage.jsp");
             dispatcher.forward(req, resp);
         } else {
-            CarsPark carsPark = new CarsPark(min,max);
             Compare compare = new Compare();
             int price = carsPark.getPrice();
             req.setAttribute("price", price);
@@ -53,7 +52,6 @@ public class ServletContainer extends HttpServlet {
                     = req.getRequestDispatcher("/WEB-INF/views/carsList.jsp");
             dispatcher.forward(req, resp);
            }
-
     }
 
     @Override

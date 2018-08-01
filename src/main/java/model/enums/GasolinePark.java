@@ -4,7 +4,6 @@ import model.interfaces.GasolineCar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -72,16 +71,6 @@ public enum GasolinePark implements GasolineCar {
 
         return parkPrice;
     }
-
-    /**
-     * Comparator
-     * Compares consumption cars
-     */
-    public static Comparator<GasolineCar> gasolineComparator = new Comparator<GasolineCar>() {
-        public int compare(GasolineCar d1, GasolineCar d2) {
-            return d2.getConsumption() - d1.getConsumption();
-        }
-    };
 
 }
 
